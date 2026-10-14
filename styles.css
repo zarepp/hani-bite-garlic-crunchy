@@ -106,3 +106,34 @@ section {
 .footer a:hover {
     text-decoration: underline;
 }
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+    .hero, .cta {
+        height: 70vh;
+        background-attachment: scroll;
+    }
+
+    .ingredients-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ingredient img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about .content, .cta-content {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 15px 0;
+    }
+}
