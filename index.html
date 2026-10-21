@@ -22,22 +22,41 @@
     </div>
   </section>
   <!-- Ingredients Section -->
-  <section class="ingredients">
-    <div class="content">
-      <h2>Pilihan ..</h2>
+  <section class="ingredients" aria-labelledby="ingredients-title">
+    <div class="ingredients-content">
+      <header class="ingredients-heading">
+        <p class="ingredients-eyebrow">PILIHAN RASA</p>
+        <h2 id="ingredients-title">Cari rangup kegemaran anda.</h2>
+        <p>Tiga perisa, satu cara untuk menikmati rangup bawang putih.</p>
+      </header>
       <div class="ingredients-list">
-        <div class="ingredient">
-          <img src="tomato.png" alt="Tomato">
-          <p>Cheese</p>
-        </div>
-        <div class="ingredient">
-          <img src="cheese.png" alt="Cheese">
-          <p>Ori</p>
-        </div>
-        <div class="ingredient">
-          <img src="basil.png" alt="Basil">
-          <p>Salted Egg</p>
-        </div>
+        <article class="ingredient">
+          <div class="ingredient-media">
+            <img src="cheese.png" alt="Balang Hani Bite perisa Ori">
+          </div>
+          <div class="ingredient-copy">
+            <h3>Ori</h3>
+            <p>Rasa klasik bawang putih yang ringkas dan memuaskan.</p>
+          </div>
+        </article>
+        <article class="ingredient">
+          <div class="ingredient-media">
+            <img src="tomato.png" alt="Balang Hani Bite perisa Cheese">
+          </div>
+          <div class="ingredient-copy">
+            <h3>Cheese</h3>
+            <p>Rasa keju yang lemak bertemu rangup bawang putih.</p>
+          </div>
+        </article>
+        <article class="ingredient">
+          <div class="ingredient-media">
+            <img src="basil.png" alt="Balang Hani Bite perisa Salted Egg">
+          </div>
+          <div class="ingredient-copy">
+            <h3>Salted Egg</h3>
+            <p>Masin berlemak dengan rasa telur masin yang menyerlah.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -59,5 +78,6 @@
       </p>
     </div>
   </footer>
+  <script src="parallax.js" defer></script>
 </body>
 </html>

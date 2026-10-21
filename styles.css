@@ -12,12 +12,29 @@ section {
 
 .hero {
     height: 100vh;
-    background: url('pizza-hero.jpg') center/cover no-repeat;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero::after, .about::before, .cta::before {
+    content: '';
+    position: absolute;
+    inset: -10% 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translate3d(0, var(--parallax-offset, 0px), 0);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero::after {
+    background-image: url('pizza-hero.jpg');
 }
 
 .hero-content {
@@ -36,8 +53,19 @@ section {
 }
 
 .about {
-    background: url('pizza-about.jpg') center/cover no-repeat;
     color: white;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.about::before {
+    background-image: url('pizza-about.jpg');
+}
+
+.about .content {
+    position: relative;
+    z-index: 1;
 }
 
 .about .content {
@@ -47,28 +75,107 @@ section {
 }
 
 .ingredients {
-    background: #f8f8f8;
+    background: #edf0e8;
+    padding: 72px 24px;
+}
+
+.ingredients-content {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.ingredients-heading {
+    max-width: 680px;
+    margin: 0 auto 36px;
+}
+
+.ingredients-eyebrow {
+    margin: 0 0 10px;
+    color: #b94a2e;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.ingredients-heading h2 {
+    margin: 0;
+    color: #20362c;
+    font-size: 2.25rem;
+}
+
+.ingredients-heading > p:last-child {
+    margin: 12px 0 0;
+    color: #58635b;
+    line-height: 1.6;
 }
 
 .ingredients-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
 }
 
-.ingredient img {
-    width: 100px;
-    height: 100px;
+.ingredient {
+    overflow: hidden;
+    padding: 12px;
+    border: 1px solid rgba(32, 54, 44, 0.1);
+    border-radius: 8px;
+    background: #fff;
+    text-align: left;
+}
+
+.ingredient-media {
+    overflow: hidden;
+    aspect-ratio: 1.2 / 1;
+    border-radius: 4px;
+    background: #f2efe8;
+}
+
+.ingredient-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 350ms ease;
+}
+
+.ingredient:hover .ingredient-media img {
+    transform: scale(1.04);
+}
+
+.ingredient-copy {
+    padding: 16px 8px 8px;
+}
+
+.ingredient h3 {
+    margin: 7px 0 6px;
+    color: #20362c;
+    font-size: 1.35rem;
+}
+
+.ingredient-copy p {
+    margin: 0;
+    color: #58635b;
+    line-height: 1.55;
 }
 
 .cta {
     height: 50vh;
-    background: url('pizza-cta.jpg') center/cover no-repeat;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.cta::before {
+    background-image: url('pizza-cta.jpg');
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
 }
 
 .cta-content {
@@ -108,20 +215,54 @@ section {
     text-decoration: underline;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .hero::after, .about::before, .cta::before {
+        transform: none;
+    }
+
+    .ingredient-media img {
+        transition: none;
+    }
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .hero, .cta {
         height: 70vh;
     }
 
-    .ingredients-list {
-        flex-direction: column;
-        gap: 10px;
+    .ingredients {
+        padding: 54px 16px;
     }
 
-    .ingredient img {
-        width: 80px;
-        height: 80px;
+    .ingredients-heading {
+        margin-bottom: 26px;
+    }
+
+    .ingredients-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .ingredients-list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .ingredient {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        padding: 8px;
+    }
+
+    .ingredient-media {
+        height: 100%;
+        min-height: 140px;
+        aspect-ratio: auto;
+    }
+
+    .ingredient-copy {
+        padding: 12px 8px;
     }
 
     .about .content, .cta-content {
@@ -143,13 +284,20 @@ section {
         height: 60vh;
     }
 
-    .ingredients-list {
-        gap: 5px;
+    .ingredients-heading h2 {
+        font-size: 1.6rem;
     }
 
-    .ingredient img {
-        width: 60px;
-        height: 60px;
+    .ingredients-list {
+        gap: 10px;
+    }
+
+    .ingredient h3 {
+        font-size: 1.15rem;
+    }
+
+    .ingredient-copy p {
+        font-size: 0.9rem;
     }
 
     .about .content, .cta-content {
