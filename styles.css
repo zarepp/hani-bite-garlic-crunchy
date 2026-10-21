@@ -167,3 +167,10 @@ section {
         padding: 10px 0;
     }
 }
+
+/* Adjust styles to disable parallax effect on mobile */
+@media (max-width: 768px) {
+    .hero, .about, .cta {
+        background-attachment: scroll;
+    }
+}
