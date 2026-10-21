@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ArrowRight, CheckCircle2, Minus, Plus, ShoppingBag, X } from 'lucide-react';
-import oriImage from '../cheese.png';
-import cheeseImage from '../tomato.png';
-import saltedEggImage from '../basil.png';
-import logoImage from '../logo_hires.png';
+import '@fontsource-variable/baloo-2';
+import '@fontsource-variable/dm-sans';
+import oriImage from './assets/images/cheese.png';
+import cheeseImage from './assets/images/tomato.png';
+import saltedEggImage from './assets/images/basil.png';
+import logoImage from './assets/images/logo_hires.png';
 import '../styles.css';
 
 const flavors = [

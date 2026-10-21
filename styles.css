@@ -1,8 +1,20 @@
+:root {
+    --font-display: 'Baloo 2 Variable', 'Trebuchet MS', sans-serif;
+    --font-body: 'DM Sans Variable', 'Trebuchet MS', sans-serif;
+}
+
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
     scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0;
 }
 
 section {
@@ -117,11 +129,23 @@ section {
 }
 
 .hero::after {
-    background-image: url('pizza-hero.jpg');
+    background-image: url('./src/assets/images/pizza-hero.jpg');
 }
 
 .hero-content {
     z-index: 2;
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-size: 3.75rem;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
+}
+
+.hero-content p {
+    margin: 14px 0 0;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .hero::before {
@@ -143,7 +167,7 @@ section {
 }
 
 .about::before {
-    background-image: url('pizza-about.jpg');
+    background-image: url('./src/assets/images/pizza-about.jpg');
 }
 
 .about .content {
@@ -155,6 +179,12 @@ section {
     background: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 10px;
+}
+
+.about .content h2,
+.cta-content h2 {
+    margin-top: 0;
+    font-size: 2.7rem;
 }
 
 .ingredients {
@@ -182,7 +212,7 @@ section {
 .ingredients-heading h2 {
     margin: 0;
     color: #20362c;
-    font-size: 2.25rem;
+    font-size: 2.55rem;
 }
 
 .ingredients-heading > p:last-child {
@@ -232,7 +262,7 @@ section {
 .ingredient h3 {
     margin: 7px 0 6px;
     color: #20362c;
-    font-size: 1.35rem;
+    font-size: 1.6rem;
 }
 
 .ingredient-copy p {
@@ -320,7 +350,7 @@ section {
 
 .cart-heading h2 {
     margin: 0;
-    font-size: 1.55rem;
+    font-size: 1.8rem;
 }
 
 .cart-close,
@@ -577,7 +607,7 @@ section {
 }
 
 .cta::before {
-    background-image: url('pizza-cta.jpg');
+    background-image: url('./src/assets/images/pizza-cta.jpg');
 }
 
 .cta-content {
@@ -661,6 +691,15 @@ section {
         height: 70vh;
     }
 
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .about .content h2,
+    .cta-content h2 {
+        font-size: 2.25rem;
+    }
+
     .ingredients {
         padding: 54px 16px;
     }
@@ -670,7 +709,11 @@ section {
     }
 
     .ingredients-heading h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    .ingredient h3 {
+        font-size: 1.4rem;
     }
 
     .ingredients-list {
@@ -727,8 +770,17 @@ section {
         height: 60vh;
     }
 
+    .hero-content h1 {
+        font-size: 2.45rem;
+    }
+
+    .about .content h2,
+    .cta-content h2 {
+        font-size: 1.9rem;
+    }
+
     .ingredients-heading h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .ingredients-list {
@@ -736,7 +788,7 @@ section {
     }
 
     .ingredient h3 {
-        font-size: 1.15rem;
+        font-size: 1.25rem;
     }
 
     .ingredient-copy p {
