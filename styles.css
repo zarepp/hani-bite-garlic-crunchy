@@ -107,11 +107,11 @@ section {
     text-decoration: underline;
 }
 
-/* Add responsive styles */
+/* Responsive styles with parallax effect for mobile */
 @media (max-width: 768px) {
-    .hero, .cta {
+    .hero, .about, .cta {
         height: 70vh;
-        background-attachment: scroll;
+        background-attachment: fixed;
     }
 
     .ingredients-list {
@@ -138,11 +138,10 @@ section {
     }
 }
 
-/* Add more responsive styles */
 @media (max-width: 480px) {
-    .hero, .cta {
+    .hero, .about, .cta {
         height: 60vh;
-        background-attachment: scroll;
+        background-attachment: fixed;
     }
 
     .ingredients-list {
@@ -165,12 +164,5 @@ section {
 
     .footer {
         padding: 10px 0;
-    }
-}
-
-/* Adjust styles to disable parallax effect on mobile */
-@media (max-width: 768px) {
-    .hero, .about, .cta {
-        background-attachment: scroll;
     }
 }
