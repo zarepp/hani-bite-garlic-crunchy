@@ -12,7 +12,7 @@ section {
 
 .hero {
     height: 100vh;
-    background: url('pizza-hero.jpg') center/cover no-repeat fixed;
+    background: url('pizza-hero.jpg') center/cover no-repeat;
     color: white;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ section {
 }
 
 .about {
-    background: url('pizza-about.jpg') center/cover no-repeat fixed;
+    background: url('pizza-about.jpg') center/cover no-repeat;
     color: white;
 }
 
@@ -54,6 +54,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .ingredient img {
@@ -63,7 +64,7 @@ section {
 
 .cta {
     height: 50vh;
-    background: url('pizza-cta.jpg') center/cover no-repeat fixed;
+    background: url('pizza-cta.jpg') center/cover no-repeat;
     color: white;
     display: flex;
     justify-content: center;
@@ -107,11 +108,10 @@ section {
     text-decoration: underline;
 }
 
-/* Responsive styles with parallax effect for mobile */
+/* Responsive styles */
 @media (max-width: 768px) {
-    .hero, .about, .cta {
+    .hero, .cta {
         height: 70vh;
-        background-attachment: fixed;
     }
 
     .ingredients-list {
@@ -139,9 +139,8 @@ section {
 }
 
 @media (max-width: 480px) {
-    .hero, .about, .cta {
+    .hero, .cta {
         height: 60vh;
-        background-attachment: fixed;
     }
 
     .ingredients-list {
